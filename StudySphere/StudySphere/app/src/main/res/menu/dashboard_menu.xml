@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/courses_tab"
+        android:icon="@drawable/ic_courses"
+        android:title="Courses" />
+    <item
+        android:id="@+id/create_course_tab"
+        android:icon="@drawable/ic_create_course"
+        android:title="Create Course" />
+    <item
+        android:id="@+id/join_course_tab"
+        android:icon="@drawable/ic_join_course"
+        android:title="Join Course" />
+</menu>
