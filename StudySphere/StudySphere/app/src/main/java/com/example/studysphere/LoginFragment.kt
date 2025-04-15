@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -86,17 +87,17 @@ class LoginFragment : Fragment() {
         // Show loading state
         loginButton.isEnabled = false
 
-        // Perform Firebase Authentication
+        // firebase auth
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 // Re-enable login button
                 loginButton.isEnabled = true
 
                 if (task.isSuccessful) {
-                    // Navigate to Dashboard or Home Screen
+                    // Navigate to Dashboard
                     Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
-                    // TODO: Navigate to dashboard
-                    // findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
+                    // [Done] TODO: Navigate to dashboard
+                    findNavController().navigate(R.id.action_login_to_dashboard)
                 } else {
                     // Handle login failures
                     val errorMessage = when (task.exception) {

@@ -1,6 +1,6 @@
 package com.example.studysphere.ui.dashboard
 
-import DashboardViewModel
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,31 +24,48 @@ class CoursesFragment : Fragment() {
 
     private lateinit var viewModel: DashboardViewModel
 
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_courses, container, false)
+
+        swipeRefreshLayout = view.findViewById(R.id.swipe_refresh)
         recyclerView = view.findViewById(R.id.courses_recycler_view)
         progressBar = view.findViewById(R.id.progress_bar)
 
         viewModel = ViewModelProvider(requireActivity())[DashboardViewModel::class.java]
 
         setupRecyclerView()
+        setupSwipeRefresh()
         observeViewModel()
-        viewModel.loadCourses()
 
         return view
     }
 
+    private fun setupSwipeRefresh() {
+        swipeRefreshLayout.setOnRefreshListener {
+            viewModel.loadCourses()
+        }
+
+        // Set colors for the refresh animation
+        swipeRefreshLayout.setColorSchemeResources(
+            R.color.purple_500,
+            R.color.purple_700,
+            R.color.teal_200
+        )
+    }
+
     private fun setupRecyclerView() {
         courseAdapter = CourseAdapter(coursesList) { course ->
-            // Navigate to course screen using Bundle instead of SafeArgs
+            // Navigate to course screen using Bundle
             val bundle = Bundle().apply {
                 putString("courseId", course.courseId)
             }
-            // Use courseFragment instead of R.id.courseFragment
+            // Navigate to course fragment
             findNavController().navigate(R.id.courseFragment, bundle)
         }
 
@@ -63,14 +80,16 @@ class CoursesFragment : Fragment() {
             coursesList.clear()
             coursesList.addAll(courses)
             courseAdapter.notifyDataSetChanged()
+            swipeRefreshLayout.isRefreshing = false
         }
 
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-            progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+            progressBar.visibility = if (isLoading && !swipeRefreshLayout.isRefreshing) View.VISIBLE else View.GONE
         }
 
         viewModel.error.observe(viewLifecycleOwner) { errorMessage ->
             Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
+            swipeRefreshLayout.isRefreshing = false
         }
     }
 }

@@ -19,6 +19,12 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    packaging {
+        resources {
+            pickFirsts += "META-INF/versions/9/OSGI-INF/MANIFEST.MF"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -61,4 +67,6 @@ dependencies {
     // Compose dependencies
     implementation("androidx.fragment:fragment-ktx:1.5.5")
     implementation("androidx.activity:activity-ktx:1.6.1")
+    implementation(libs.identity.jvm)
+    implementation(libs.androidx.swiperefreshlayout)
 }
