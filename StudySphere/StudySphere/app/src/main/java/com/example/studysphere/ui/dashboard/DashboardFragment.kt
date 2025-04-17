@@ -55,11 +55,12 @@ class DashboardFragment : Fragment() {
         // Setup RecyclerView
         coursesRecyclerView = view.findViewById(R.id.courses_recycler_view)
         courseAdapter = CourseAdapter(emptyList()) { course ->
-            // Navigate to course details
+            // Navigate directly to CourseScreenFragment
             val bundle = Bundle().apply {
                 putString("courseId", course.courseId)
+                putString("courseName", course.courseName)
             }
-            findNavController().navigate(R.id.courseFragment, bundle)
+            findNavController().navigate(R.id.action_dashboardFragment_to_courseScreenFragment, bundle)
         }
         coursesRecyclerView.layoutManager = LinearLayoutManager(context)
         coursesRecyclerView.adapter = courseAdapter
@@ -196,40 +197,5 @@ class DashboardFragment : Fragment() {
         coursesRecyclerView.visibility = View.GONE
         if (::createCourseView.isInitialized) createCourseView.visibility = View.GONE
         if (::joinCourseView.isInitialized) joinCourseView.visibility = View.VISIBLE
-    }
-}
-
-class CourseAdapter(
-    private var courses: List<Course>,
-    private val onCourseClick: (Course) -> Unit
-) : RecyclerView.Adapter<CourseViewHolder>() {
-
-    fun updateCourses(newCourses: List<Course>) {
-        courses = newCourses
-        notifyDataSetChanged()
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_course, parent, false)
-        return CourseViewHolder(view, onCourseClick)
-    }
-
-    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-        holder.bind(courses[position])
-    }
-
-    override fun getItemCount() = courses.size
-}
-
-class CourseViewHolder(
-    itemView: View,
-    private val onCourseClick: (Course) -> Unit
-) : RecyclerView.ViewHolder(itemView) {
-    private val courseNameTextView: TextView = itemView.findViewById(R.id.course_name)
-
-    fun bind(course: Course) {
-        courseNameTextView.text = course.courseName
-        itemView.setOnClickListener { onCourseClick(course) }
     }
 }

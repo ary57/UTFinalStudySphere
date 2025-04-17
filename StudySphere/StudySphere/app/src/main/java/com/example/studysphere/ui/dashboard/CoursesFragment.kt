@@ -64,9 +64,10 @@ class CoursesFragment : Fragment() {
             // Navigate to course screen using Bundle
             val bundle = Bundle().apply {
                 putString("courseId", course.courseId)
+                putString("courseName", course.courseName)
             }
-            // Navigate to course fragment
-            findNavController().navigate(R.id.courseFragment, bundle)
+            // Navigate to course screen fragment (NOT courseFragment)
+            findNavController().navigate(R.id.courseScreenFragment, bundle)
         }
 
         recyclerView.apply {

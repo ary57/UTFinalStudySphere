@@ -6,26 +6,27 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.studysphere.LoginFragment"
+        android:name="com.example.studysphere.ui.auth.LoginFragment"
         android:label="Login">
         <action
-            android:id="@+id/action_login_to_register"
+            android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_login_to_dashboard"
-            app:destination="@id/dashboardFragment" />
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.studysphere.LoginFragment"
+        android:name="com.example.studysphere.ui.auth.RegisterFragment"
         android:label="Register">
         <action
-            android:id="@+id/action_register_to_dashboard"
-            app:destination="@id/dashboardFragment" />
-        <action
-            android:id="@+id/action_register_to_login"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_registerFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -33,22 +34,22 @@
         android:name="com.example.studysphere.ui.dashboard.DashboardFragment"
         android:label="Dashboard">
         <action
-            android:id="@+id/action_dashboard_to_course"
-            app:destination="@id/courseFragment" />
+            android:id="@+id/action_dashboardFragment_to_courseScreenFragment"
+            app:destination="@id/courseScreenFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/courseFragment"
-        android:name="com.example.studysphere.ui.course.CourseFragment"
-        android:label="Course">
+        android:id="@+id/courseScreenFragment"
+        android:name="com.example.studysphere.ui.course.CourseScreenFragment"
+        android:label="Course Details">
         <argument
             android:name="courseId"
             app:argType="string" />
+        <argument
+            android:name="courseName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 
-    <fragment
-        android:id="@+id/coursesFragment"
-        android:name="com.example.studysphere.ui.dashboard.CoursesFragment"
-        android:label="Courses">
-    </fragment>
 </navigation>

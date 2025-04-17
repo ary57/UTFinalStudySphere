@@ -1,4 +1,4 @@
-package com.example.studysphere
+package com.example.studysphere.ui.auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.studysphere.R
+import com.example.studysphere.ValidationUtils
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -97,7 +99,7 @@ class LoginFragment : Fragment() {
                     // Navigate to Dashboard
                     Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
                     // [Done] TODO: Navigate to dashboard
-                    findNavController().navigate(R.id.action_login_to_dashboard)
+                    findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
                 } else {
                     // Handle login failures
                     val errorMessage = when (task.exception) {

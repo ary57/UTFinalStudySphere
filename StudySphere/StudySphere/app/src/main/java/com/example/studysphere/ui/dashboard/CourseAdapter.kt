@@ -1,3 +1,5 @@
+package com.example.studysphere.ui.dashboard
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,9 +9,15 @@ import com.example.studysphere.R
 import com.example.studysphere.data.model.Course
 
 class CourseAdapter(
-    private val courses: List<Course>,
+    private var courses: List<Course>,
     private val onCourseClicked: (Course) -> Unit
 ) : RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
+
+    // Add updateCourses method to support DashboardViewModel functionality
+    fun updateCourses(newCourses: List<Course>) {
+        courses = newCourses
+        notifyDataSetChanged()
+    }
 
     class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val courseName: TextView = itemView.findViewById(R.id.course_name)
