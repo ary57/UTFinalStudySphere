@@ -50,6 +50,19 @@
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null" />
+        <!-- Properly nest the action inside the fragment -->
+        <action
+            android:id="@+id/actionCourseScreenFragmentToCreateSessionFragment"
+            app:destination="@id/createSessionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createSessionFragment"
+        android:name="com.example.studysphere.ui.dashboard.CreateSessionFragment"
+        android:label="Create Study Session">
+        <argument
+            android:name="courseId"
+            app:argType="string" />
     </fragment>
 
 </navigation>

@@ -41,6 +41,11 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+
 }
 
 dependencies {
@@ -69,4 +74,11 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.6.1")
     implementation(libs.identity.jvm)
     implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.firebase.database.ktx)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.androidx.animation.core.android)
+    implementation(libs.androidx.animation.core.android)
+    implementation(libs.androidx.animation.core.android)
+
 }

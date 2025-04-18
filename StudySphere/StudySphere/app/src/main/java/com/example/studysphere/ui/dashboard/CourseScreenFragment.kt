@@ -19,6 +19,16 @@ class CourseScreenFragment : Fragment() {
     private var courseId: String? = null
     private var courseName: String? = null
 
+    // Add imports for the dashboard fragments
+    private val chatFragmentClass = com.example.studysphere.ui.dashboard.ChatFragment::class.java
+    private val notesFragmentClass = com.example.studysphere.ui.dashboard.NotesFragment::class.java
+    private val meetsFragmentClass = com.example.studysphere.ui.dashboard.MeetsFragment::class.java
+
+    // Add public getter method for courseId
+    fun getCourseId(): String? {
+        return courseId
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -94,71 +104,11 @@ class CourseScreenFragment : Fragment() {
 
         override fun createFragment(position: Int): Fragment {
             return when (position) {
-                0 -> ChatFragment.newInstance(courseId)
-                1 -> NotesFragment.newInstance(courseId)
-                2 -> MeetsFragment.newInstance(courseId)
+                0 -> com.example.studysphere.ui.dashboard.ChatFragment.newInstance(courseId)
+                1 -> com.example.studysphere.ui.dashboard.NotesFragment.newInstance(courseId)
+                2 -> com.example.studysphere.ui.dashboard.MeetsFragment.newInstance(courseId)
                 else -> throw IllegalArgumentException("Invalid position $position")
             }
-        }
-    }
-}
-
-class NotesFragment : Fragment() {
-    private var courseId: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            courseId = it.getString("courseId")
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // TODO: Implement notes tab layout
-        return inflater.inflate(R.layout.fragment_placeholder, container, false)
-    }
-
-    companion object {
-        fun newInstance(courseId: String?): NotesFragment {
-            val fragment = NotesFragment()
-            val args = Bundle()
-            args.putString("courseId", courseId)
-            fragment.arguments = args
-            return fragment
-        }
-    }
-}
-
-class MeetsFragment : Fragment() {
-    private var courseId: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            courseId = it.getString("courseId")
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // TODO: Implement meets tab layout
-        return inflater.inflate(R.layout.fragment_placeholder, container, false)
-    }
-
-    companion object {
-        fun newInstance(courseId: String?): MeetsFragment {
-            val fragment = MeetsFragment()
-            val args = Bundle()
-            args.putString("courseId", courseId)
-            fragment.arguments = args
-            return fragment
         }
     }
 }
