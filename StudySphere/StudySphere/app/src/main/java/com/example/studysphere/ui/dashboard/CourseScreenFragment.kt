@@ -19,9 +19,7 @@ class CourseScreenFragment : Fragment() {
     private var courseId: String? = null
     private var courseName: String? = null
 
-    // Add imports for the dashboard fragments
     private val chatFragmentClass = com.example.studysphere.ui.dashboard.ChatFragment::class.java
-    private val notesFragmentClass = com.example.studysphere.ui.dashboard.NotesFragment::class.java
     private val meetsFragmentClass = com.example.studysphere.ui.dashboard.MeetsFragment::class.java
 
     // Add public getter method for courseId
@@ -72,8 +70,7 @@ class CourseScreenFragment : Fragment() {
             override fun onPageSelected(position: Int) {
                 when (position) {
                     0 -> bottomNavigation.selectedItemId = R.id.nav_chat
-                    1 -> bottomNavigation.selectedItemId = R.id.nav_notes
-                    2 -> bottomNavigation.selectedItemId = R.id.nav_meets
+                    1 -> bottomNavigation.selectedItemId = R.id.nav_meets
                 }
             }
         })
@@ -86,12 +83,8 @@ class CourseScreenFragment : Fragment() {
                     viewPager.currentItem = 0
                     true
                 }
-                R.id.nav_notes -> {
-                    viewPager.currentItem = 1
-                    true
-                }
                 R.id.nav_meets -> {
-                    viewPager.currentItem = 2
+                    viewPager.currentItem = 1
                     true
                 }
                 else -> false
@@ -100,13 +93,13 @@ class CourseScreenFragment : Fragment() {
     }
 
     inner class CourseTabsAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-        override fun getItemCount(): Int = 3
+        // Changed from 3 to 2 tab count
+        override fun getItemCount(): Int = 2
 
         override fun createFragment(position: Int): Fragment {
             return when (position) {
                 0 -> com.example.studysphere.ui.dashboard.ChatFragment.newInstance(courseId)
-                1 -> com.example.studysphere.ui.dashboard.NotesFragment.newInstance(courseId)
-                2 -> com.example.studysphere.ui.dashboard.MeetsFragment.newInstance(courseId)
+                1 -> com.example.studysphere.ui.dashboard.MeetsFragment.newInstance(courseId)
                 else -> throw IllegalArgumentException("Invalid position $position")
             }
         }

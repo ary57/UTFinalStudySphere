@@ -4,10 +4,7 @@
         android:id="@+id/nav_chat"
         android:icon="@drawable/ic_chat"
         android:title="Chat" />
-    <item
-        android:id="@+id/nav_notes"
-        android:icon="@drawable/ic_notes"
-        android:title="Notes" />
+
     <item
         android:id="@+id/nav_meets"
         android:icon="@drawable/ic_meets"
