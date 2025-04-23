@@ -1,67 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/loginFragment">
 
+    <!-- Login Fragment -->
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.studysphere.ui.auth.LoginFragment"
-        android:label="Login">
-        <action
-            android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <!-- Navigate to Dashboard -->
         <action
             android:id="@+id/action_loginFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment"
-            app:popUpTo="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+        <!-- Navigate to Registration -->
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
 
+    <!-- Registration Fragment -->
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.studysphere.ui.auth.RegisterFragment"
-        android:label="Register">
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <!-- Navigate to Login -->
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <!-- Navigate to Dashboard -->
         <action
             android:id="@+id/action_registerFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment"
-            app:popUpTo="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
     </fragment>
 
+    <!-- Dashboard Fragment -->
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.example.studysphere.ui.dashboard.DashboardFragment"
-        android:label="Dashboard">
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <!-- Add action to CourseScreenFragment -->
         <action
             android:id="@+id/action_dashboardFragment_to_courseScreenFragment"
             app:destination="@id/courseScreenFragment" />
     </fragment>
 
+    <!-- CourseScreen Fragment -->
     <fragment
         android:id="@+id/courseScreenFragment"
         android:name="com.example.studysphere.ui.course.CourseScreenFragment"
-        android:label="Course Details">
-        <argument
-            android:name="courseId"
-            app:argType="string" />
-        <argument
-            android:name="courseName"
-            app:argType="string"
-            app:nullable="true"
-            android:defaultValue="@null" />
+        android:label="Course Screen"
+        tools:layout="@layout/fragment_course">
+        <!-- Add action to CreateSessionFragment -->
         <action
-            android:id="@+id/actionCourseScreenFragmentToCreateSessionFragment"
+            android:id="@+id/action_courseScreenFragment_to_createSessionFragment"
             app:destination="@id/createSessionFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/createSessionFragment"
         android:name="com.example.studysphere.ui.dashboard.CreateSessionFragment"
-        android:label="Create Study Session">
+        android:label="Create Session"
+        tools:layout="@layout/fragment_create_session">
         <argument
             android:name="courseId"
             app:argType="string" />
     </fragment>
-
 </navigation>

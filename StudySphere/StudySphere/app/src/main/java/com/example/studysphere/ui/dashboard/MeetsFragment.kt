@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.studysphere.R
-import com.example.studysphere.data.model.StudySession
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.studysphere.databinding.FragmentMeetsBinding
 import com.example.studysphere.ui.course.CourseScreenFragment
@@ -110,11 +108,9 @@ class MeetsFragment : Fragment() {
     private fun setupListeners() {
         binding.buttonCreateSession.setOnClickListener {
             courseId?.let { id ->
-                // Use the properly nested action from nav_graph.xml
-                val action = findNavController().navigate(
-                    R.id.actionCourseScreenFragmentToCreateSessionFragment,
-                    Bundle().apply { putString("courseId", id) }
-                )
+                // Use the generated Directions class
+                val action = CourseScreenFragmentDirections.actionCourseScreenFragmentToCreateSessionFragment(id)
+                findNavController().navigate(action)
             }
         }
     }

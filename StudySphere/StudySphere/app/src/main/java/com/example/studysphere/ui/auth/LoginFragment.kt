@@ -47,10 +47,9 @@ class LoginFragment : Fragment() {
             performLogin()
         }
 
-        // Setup register button
+        // Setup register button - Update to navigate to RegisterFragment
         registerButton.setOnClickListener {
-            // TODO: Navigate to registration fragment
-            Toast.makeText(context, "Registration coming soon", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
         return view
@@ -98,7 +97,6 @@ class LoginFragment : Fragment() {
                 if (task.isSuccessful) {
                     // Navigate to Dashboard
                     Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
-                    // [Done] TODO: Navigate to dashboard
                     findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
                 } else {
                     // Handle login failures

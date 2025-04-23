@@ -1,9 +1,11 @@
 package com.example.studysphere.ui.course
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
@@ -33,6 +35,8 @@ class CourseScreenFragment : Fragment() {
             courseId = it.getString("courseId")
             courseName = it.getString("courseName")
         }
+        // Enable options menu in this fragment
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -59,6 +63,35 @@ class CourseScreenFragment : Fragment() {
         setupBottomNavigation()
 
         return view
+    }
+
+    // Add options menu creation
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.course_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    // Handle menu item selection
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_copy_course_id -> {
+                copyCourseIdToClipboard()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    // Function to copy course ID to clipboard
+    private fun copyCourseIdToClipboard() {
+        courseId?.let { id ->
+            val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("Course ID", id)
+            clipboard.setPrimaryClip(clip)
+            Toast.makeText(context, "Course ID copied to clipboard", Toast.LENGTH_SHORT).show()
+        } ?: run {
+            Toast.makeText(context, "No course ID available", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setupViewPager() {
