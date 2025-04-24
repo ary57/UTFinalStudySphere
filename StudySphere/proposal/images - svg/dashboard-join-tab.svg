@@ -1,0 +1,51 @@
+<svg viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="700" fill="#f5f5f5"/>
+  
+  <!-- Header -->
+  <rect width="400" height="60" fill="#4285f4"/>
+  <text x="20" y="38" font-family="Arial" font-size="20" fill="white">StudySphere</text>
+  
+  <!-- Logout Menu Icon -->
+  <circle cx="370" cy="30" r="15" fill="white" fill-opacity="0.3"/>
+  <text x="370" y="35" font-family="Arial" font-size="14" fill="white" text-anchor="middle">⋮</text>
+  
+  <!-- Tabs Container -->
+  <rect x="0" y="60" width="400" height="50" fill="white"/>
+  
+  <!-- Tab Buttons -->
+  <rect x="0" y="60" width="133" height="50" fill="white"/>
+  <text x="66" y="90" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Courses</text>
+  
+  <rect x="133" y="60" width="134" height="50" fill="white"/>
+  <text x="200" y="90" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Create Course</text>
+  
+  <rect x="267" y="60" width="133" height="50" fill="#e3f2fd"/>
+  <text x="333" y="90" font-family="Arial" font-size="14" fill="#4285f4" text-anchor="middle">Join Course</text>
+  
+  <!-- Content Area - Join Course Tab -->
+  <text x="200" y="160" font-family="Arial" font-size="20" fill="#333" text-anchor="middle">Join Existing Course</text>
+  
+  <!-- Form -->
+  <text x="40" y="210" font-family="Arial" font-size="14" fill="#666">Course ID</text>
+  <rect x="40" y="225" width="320" height="50" rx="5" fill="white" stroke="#ccc"/>
+  <text x="55" y="255" font-family="Arial" font-size="14" fill="#999">Enter the unique course ID</text>
+  
+  <!-- Info Text -->
+  <text x="40" y="320" font-family="Arial" font-size="12" fill="#666">
+    Ask your instructor or classmates for the course ID.
+  </text>
+  
+  <!-- Join Button -->
+  <rect x="40" y="370" width="320" height="50" rx="5" fill="#4285f4"/>
+  <text x="200" y="400" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Join Course</text>
+  
+  <!-- Bottom Navigation Bar -->
+  <rect x="0" y="650" width="400" height="50" fill="white" stroke="#eee"/>
+  <rect x="267" y="649" width="133" height="51" fill="#e3f2fd"/>
+  
+  <!-- Navigation Icons -->
+  <text x="66" y="680" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Courses</text>
+  <text x="200" y="680" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Create</text>
+  <text x="333" y="680" font-family="Arial" font-size="12" fill="#4285f4" text-anchor="middle">Join</text>
+</svg>

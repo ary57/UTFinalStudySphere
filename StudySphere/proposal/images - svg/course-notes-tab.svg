@@ -1,0 +1,67 @@
+<svg viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="700" fill="#f5f5f5"/>
+  
+  <!-- Header -->
+  <rect width="400" height="60" fill="#4285f4"/>
+  <text x="20" y="38" font-family="Arial" font-size="18" fill="white">CS101: Intro to Computer Science</text>
+  
+  <!-- Back Button -->
+  <circle cx="370" cy="30" r="15" fill="white" fill-opacity="0.3"/>
+  <text x="370" y="35" font-family="Arial" font-size="14" fill="white" text-anchor="middle">←</text>
+  
+  <!-- Tabs Container -->
+  <rect x="0" y="60" width="400" height="50" fill="white"/>
+  
+  <!-- Tab Buttons -->
+  <rect x="0" y="60" width="133" height="50" fill="white"/>
+  <text x="66" y="90" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Chat</text>
+  
+  <rect x="133" y="60" width="134" height="50" fill="#e3f2fd"/>
+  <text x="200" y="90" font-family="Arial" font-size="14" fill="#4285f4" text-anchor="middle">Notes</text>
+  
+  <rect x="267" y="60" width="133" height="50" fill="white"/>
+  <text x="333" y="90" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Meets</text>
+  
+  <!-- Search Bar -->
+  <rect x="20" y="120" width="360" height="40" rx="20" fill="white" stroke="#ddd"/>
+  <text x="50" y="145" font-family="Arial" font-size="14" fill="#999">Search notes...</text>
+  <circle cx="35" cy="140" r="10" fill="none" stroke="#999" stroke-width="2"/>
+  
+  <!-- Folder and File List -->
+  <!-- Folder 1 -->
+  <rect x="20" y="180" width="360" height="60" rx="5" fill="white" stroke="#ddd"/>
+  <rect x="35" y="195" width="30" height="30" fill="#ffe082"/>
+  <text x="80" y="215" font-family="Arial" font-size="16" fill="#333">Lecture Notes</text>
+  
+  <!-- Folder 2 -->
+  <rect x="20" y="250" width="360" height="60" rx="5" fill="white" stroke="#ddd"/>
+  <rect x="35" y="265" width="30" height="30" fill="#ffe082"/>
+  <text x="80" y="285" font-family="Arial" font-size="16" fill="#333">Assignments</text>
+  
+  <!-- File 1 -->
+  <rect x="20" y="320" width="360" height="60" rx="5" fill="white" stroke="#ddd"/>
+  <rect x="35" y="335" width="25" height="30" fill="#e3f2fd" stroke="#4285f4" stroke-width="1"/>
+  <text x="80" y="355" font-family="Arial" font-size="16" fill="#333">Syllabus.pdf</text>
+  
+  <!-- File 2 -->
+  <rect x="20" y="390" width="360" height="60" rx="5" fill="white" stroke="#ddd"/>
+  <rect x="35" y="405" width="25" height="30" fill="#e3f2fd" stroke="#4285f4" stroke-width="1"/>
+  <text x="80" y="425" font-family="Arial" font-size="16" fill="#333">Week1_Slides.pdf</text>
+  
+  <!-- Bottom Action Bar -->
+  <rect x="0" y="650" width="400" height="50" fill="white"/>
+  
+  <!-- Action Buttons -->
+  <circle cx="100" cy="675" r="20" fill="#4285f4"/>
+  <text x="100" y="680" font-family="Arial" font-size="20" fill="white" text-anchor="middle">+</text>
+  <text x="100" y="710" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">New Folder</text>
+  
+  <circle cx="200" cy="675" r="20" fill="#4285f4"/>
+  <text x="200" y="680" font-family="Arial" font-size="20" fill="white" text-anchor="middle">↑</text>
+  <text x="200" y="710" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Upload File</text>
+  
+  <circle cx="300" cy="675" r="20" fill="#4285f4"/>
+  <text x="300" y="680" font-family="Arial" font-size="20" fill="white" text-anchor="middle">↩</text>
+  <text x="300" y="710" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Back</text>
+</svg>

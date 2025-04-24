@@ -1,0 +1,70 @@
+<svg viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="700" fill="#f5f5f5"/>
+  
+  <!-- Header -->
+  <rect width="400" height="60" fill="#4285f4"/>
+  <text x="20" y="38" font-family="Arial" font-size="18" fill="white">CS101: Intro to Computer Science</text>
+  
+  <!-- Back Button -->
+  <circle cx="370" cy="30" r="15" fill="white" fill-opacity="0.3"/>
+  <text x="370" y="35" font-family="Arial" font-size="14" fill="white" text-anchor="middle">←</text>
+  
+  <!-- Tabs Container -->
+  <rect x="0" y="60" width="400" height="50" fill="white"/>
+  
+  <!-- Tab Buttons -->
+  <rect x="0" y="60" width="133" height="50" fill="white"/>
+  <text x="66" y="90" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Chat</text>
+  
+  <rect x="133" y="60" width="134" height="50" fill="white"/>
+  <text x="200" y="90" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Notes</text>
+  
+  <rect x="267" y="60" width="133" height="50" fill="#e3f2fd"/>
+  <text x="333" y="90" font-family="Arial" font-size="14" fill="#4285f4" text-anchor="middle">Meets</text>
+  
+  <!-- Study Sessions List -->
+  <!-- Session 1 -->
+  <rect x="20" y="130" width="360" height="120" rx="5" fill="white" stroke="#ddd"/>
+  <text x="35" y="155" font-family="Arial" font-size="18" font-weight="bold" fill="#333">Midterm Prep Session</text>
+  <text x="35" y="180" font-family="Arial" font-size="14" fill="#666">Date: April 15, 2025</text>
+  <text x="35" y="200" font-family="Arial" font-size="14" fill="#666">Time: 4:00 PM - 6:00 PM</text>
+  <text x="35" y="220" font-family="Arial" font-size="14" fill="#666">Location: Library Study Room 3</text>
+  <text x="335" y="155" font-family="Arial" font-size="14" fill="#4285f4" text-anchor="end">8 attendees</text>
+  
+  <!-- RSVP Buttons -->
+  <rect x="260" y="180" width="40" height="30" rx="15" fill="#4caf50"/>
+  <text x="280" y="200" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Yes</text>
+  
+  <rect x="310" y="180" width="30" height="30" rx="15" fill="white" stroke="#ff9800"/>
+  <text x="325" y="200" font-family="Arial" font-size="12" fill="#ff9800" text-anchor="middle">?</text>
+  
+  <rect x="350" y="180" width="30" height="30" rx="15" fill="white" stroke="#f44336"/>
+  <text x="365" y="200" font-family="Arial" font-size="12" fill="#f44336" text-anchor="middle">No</text>
+  
+  <!-- Session 2 -->
+  <rect x="20" y="270" width="360" height="120" rx="5" fill="white" stroke="#ddd"/>
+  <text x="35" y="295" font-family="Arial" font-size="18" font-weight="bold" fill="#333">Project Work Session</text>
+  <text x="35" y="320" font-family="Arial" font-size="14" fill="#666">Date: April 18, 2025</text>
+  <text x="35" y="340" font-family="Arial" font-size="14" fill="#666">Time: 5:30 PM - 8:00 PM</text>
+  <text x="35" y="360" font-family="Arial" font-size="14" fill="#666">Location: Tech Building Room 101</text>
+  <text x="335" y="295" font-family="Arial" font-size="14" fill="#4285f4" text-anchor="end">5 attendees</text>
+  
+  <!-- RSVP Buttons -->
+  <rect x="260" y="320" width="40" height="30" rx="15" fill="white" stroke="#4caf50"/>
+  <text x="280" y="340" font-family="Arial" font-size="12" fill="#4caf50" text-anchor="middle">Yes</text>
+  
+  <rect x="310" y="320" width="30" height="30" rx="15" fill="#ff9800"/>
+  <text x="325" y="340" font-family="Arial" font-size="12" fill="white" text-anchor="middle">?</text>
+  
+  <rect x="350" y="320" width="30" height="30" rx="15" fill="white" stroke="#f44336"/>
+  <text x="365" y="340" font-family="Arial" font-size="12" fill="#f44336" text-anchor="middle">No</text>
+  
+  <!-- Calendar Integration Info -->
+  <rect x="20" y="410" width="360" height="40" rx="5" fill="#e3f2fd"/>
+  <text x="200" y="435" font-family="Arial" font-size="14" fill="#4285f4" text-anchor="middle">Add to Google Calendar</text>
+  
+  <!-- Floating Action Button -->
+  <circle cx="340" cy="600" r="30" fill="#4285f4"/>
+  <text x="340" y="605" font-family="Arial" font-size="24" fill="white" text-anchor="middle">+</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="700" fill="#f5f5f5"/>
+  
+  <!-- Header -->
+  <rect width="400" height="60" fill="#4285f4"/>
+  <text x="20" y="38" font-family="Arial" font-size="18" fill="white">CS101: Intro to Computer Science</text>
+  
+  <!-- Back Button -->
+  <circle cx="370" cy="30" r="15" fill="white" fill-opacity="0.3"/>
+  <text x="370" y="35" font-family="Arial" font-size="14" fill="white" text-anchor="middle">←</text>
+  
+  <!-- Tabs Container -->
+  <rect x="0" y="60" width="400" height="50" fill="white"/>
+  
+  <!-- Tab Buttons -->
+  <rect x="0" y="60" width="133" height="50" fill="#e3f2fd"/>
+  <text x="66" y="90" font-family="Arial" font-size="14" fill="#4285f4" text-anchor="middle">Chat</text>
+  
+  <rect x="133" y="60" width="134" height="50" fill="white"/>
+  <text x="200" y="90" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Notes</text>
+  
+  <rect x="267" y="60" width="133" height="50" fill="white"/>
+  <text x="333" y="90" font-family="Arial" font-size="14" fill="#666" text-anchor="middle">Meets</text>
+  
+  <!-- Chat Messages Area -->
+  <rect x="0" y="110" width="400" height="540" fill="white"/>
+  
+  <!-- Sample Messages -->
+  <!-- Message 1 -->
+  <rect x="10" y="120" width="300" height="70" rx="10" fill="#e9edf5"/>
+  <text x="20" y="140" font-family="Arial" font-size="12" fill="#666">Sarah Johnson</text>
+  <text x="20" y="160" font-family="Arial" font-size="14" fill="#333">Did everyone understand the assignment due Friday?</text>
+  <text x="290" y="180" font-family="Arial" font-size="10" fill="#999" text-anchor="end">10:30 AM</text>
+  
+  <!-- Message 2 -->
+  <rect x="90" y="200" width="300" height="70" rx="10" fill="#e3f2fd"/>
+  <text x="100" y="220" font-family="Arial" font-size="12" fill="#666">You</text>
+  <text x="100" y="240" font-family="Arial" font-size="14" fill="#333">I'm still confused about question 3. Any hints?</text>
+  <text x="380" y="260" font-family="Arial" font-size="10" fill="#999" text-anchor="end">10:32 AM</text>
+  
+  <!-- Message 3 -->
+  <rect x="10" y="280" width="300" height="90" rx="10" fill="#e9edf5"/>
+  <text x="20" y="300" font-family="Arial" font-size="12" fill="#666">Michael Chen</text>
+  <text x="20" y="320" font-family="Arial" font-size="14" fill="#333">Question 3 is about recursive functions. I can share my notes if you want.</text>
+  <text x="290" y="360" font-family="Arial" font-size="10" fill="#999" text-anchor="end">10:35 AM</text>
+  
+  <!-- Message Input Area -->
+  <rect x="0" y="650" width="400" height="50" fill="white" stroke="#eee"/>
+  <rect x="10" y="655" width="300" height="40" rx="20" fill="#f5f5f5" stroke="#ddd"/>
+  <text x="30" y="680" font-family="Arial" font-size="14" fill="#999">Type a message...</text>
+  
+  <!-- Attachment Button -->
+  <circle cx="330" cy="675" r="15" fill="white" stroke="#4285f4"/>
+  <text x="330" y="680" font-family="Arial" font-size="14" fill="#4285f4" text-anchor="middle">+</text>
+  
+  <!-- Send Button -->
+  <circle cx="370" cy="675" r="20" fill="#4285f4"/>
+  <text x="370" y="680" font-family="Arial" font-size="14" fill="white" text-anchor="middle">→</text>
+</svg>
